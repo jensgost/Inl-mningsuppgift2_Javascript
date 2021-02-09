@@ -26,6 +26,7 @@ body{
 }
 
 #main-header{
+  font-weight:100;
   background-color:darkgrey;
   color:black;
   padding: 15px 0;
