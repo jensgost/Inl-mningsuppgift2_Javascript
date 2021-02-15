@@ -8,13 +8,17 @@ class UI {
 
         this.uiContainer.innerHTML = `
 
-        <div class ="card mx-auto mt-5" style="width: 18rem;">
-            <div class = "card-body justify-content-center">
-                <h5 class="card-title">${data.name}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Highs of ${data.main.temp_max}. Lows of ${data.main.temp_min}</h6>
-                <p class="card-text">Weather conditions are described as: ${data.weather[0].description}</p>
+        <nav class="navbar justify-content-center">
+        <h5>${data.name}</h5>
+      </nav>
+     
+        <div class="container">
+          <div class="row">
+            <div class="col-md bg-light display-7" id="weather">
+              <h6>Current weather</h6> <p>Thursday <br>Temperature: ${data.main.temp}<br>Condition: ${data.weather.main}</p>
             </div>
-        </div>
+          </div>
+        </div> 
 
         `;
     }
