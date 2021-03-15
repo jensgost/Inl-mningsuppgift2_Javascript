@@ -1,4 +1,4 @@
-
+"strict mode";
 // tar in value från search bar
 /*  
 let searchBar = document.querySelector("#csearch");
@@ -21,3 +21,9 @@ outputElement.innerText = url;
 
 return url;
 }*/
+
+// definerar variabler för att kommma åt veckodag, temperatur, väder samt plats
+const weekdayElement = document.querySelector(".weekday p");
+const tempValueElement = document.querySelector(".temperature-value p");
+const tempDescElement = document.querySelector(".temperature-description p");
+const locationElement = document.querySelector(".location p");
