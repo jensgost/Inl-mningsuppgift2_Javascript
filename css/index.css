@@ -1,40 +1,41 @@
-*{
-    padding: 0;
-    margin: 0;
+* {
+  padding: 0;
+  margin: 0;
 }
 
-html, body{
-    height: 100%; /* för footer */
+html,
+body {
+  height: 100%; /* för footer */
 }
 
-body{
-    background-color:white;
-    color:black;
-    font-family:Arial, Helvetica, sans-serif;
-    font-size: 16px; 
-    line-height: 1.6em;
-    margin:0; 
-    display: flex; /* för footer */
-    flex-direction: column; /* för footer */
-  }
+body {
+  background-color: white;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.6em;
+  margin: 0;
+  display: flex; /* för footer */
+  flex-direction: column; /* för footer */
+}
 
-.container{
+.container {
   width: 80%;
-  margin:auto;
-  overflow:hidden;
+  margin: auto;
+  overflow: hidden;
   flex: 1 0 auto; /* för footer */
 }
 
-#main-header{
-  font-weight:100;
-  background-color:darkgrey;
-  color:black;
+#main-header {
+  font-weight: 100;
+  background-color: darkgrey;
+  color: black;
   padding: 15px 0;
 }
 
-#main-footer{
-  background-color:darkgrey;
-  color:black;
+#main-footer {
+  background-color: darkgrey;
+  color: black;
   text-align: center;
   width: 100%;
   flex-shrink: 0; /* för footer */

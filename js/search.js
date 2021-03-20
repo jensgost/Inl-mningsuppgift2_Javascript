@@ -11,4 +11,16 @@ function search(){
         }
     };
 
+    document.querySelector(".form-check-input2").onchange = function() {
+        if (form-check-input2.checked === true) {
+            attraction1.style.display = "block";
+            attraction2.style.display = "block";
+            attraction3.style.display = "block";
+        } else {
+            attraction1.style.display = "none";
+            attraction2.style.display = "none";
+            attraction3.style.display = "none";
+        }
+    };
+
 }

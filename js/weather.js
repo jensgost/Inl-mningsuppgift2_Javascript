@@ -7,7 +7,8 @@ const weatherCondElement = document.querySelector(".condition p")
 const weather = document.querySelector("#weather");
 const input = document.querySelector("#csearch");
 
-function getCityWeatherURL(input) {
+// 
+function getCityWeather(input) {
 
 const url = new URL("https://api.openweathermap.org/data/2.5/weather");
 
@@ -19,32 +20,16 @@ url.searchParams.set("lang", "se");
 
 return url;
 }
-const url = getCityWeatherURL(input);
+const url = getCityWeather(input);
 window.url = url;
 
 input.onchange = async function getWeatherData(){
-    const url = getCityWeatherURL(input);
+    const url = getCityWeather(input);
 
-    const response = await fetch(url);
-    const data = await response.json();
+    const weatherResponse = await fetch(url);
+    const weatherData = await weatherResponse.json();
     
-    console.log(data);
-    locationElement.innerHTML = `Location: ${data.name}, ${data.sys.country}`;
-    tempElement.innerHTML = `Temperature: ${data.main.temp} °C`;
-    weatherCondElement.innerHTML = `Weather condition: ${data.weather[0].main}`;
-    }
-
-    function search(){
-        this.getWeatherData(document.querySelector("#csearch").value);
-        document.querySelector("#csubmit").addEventListener("click", function() {
-            weather.search();
-        });
-        document.querySelector(".form-check-input1").onchange = function showWeather (){
-            if (form-check-input1.checked === true) {
-                weather.style.display = "block";
-            } else {
-                weather.style.display = "none";
-            }
-        };
-    
+    locationElement.innerHTML = `Location: ${weatherData.name}, ${weatherData.sys.country}`;
+    tempElement.innerHTML = `Temperature: ${weatherData.main.temp} °C`;
+    weatherCondElement.innerHTML = `Weather condition: ${weatherData.weather[0].main}`;
     }
