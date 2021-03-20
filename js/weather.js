@@ -2,10 +2,10 @@
 
 // definerar variabler för att kommma åt veckodag, temperatur, väder samt plats
 const locationElement = document.querySelector(".location p");
-const weekdayElement = document.querySelector(".weekday p");
 const tempElement = document.querySelector(".temperature p");
 const weatherCondElement = document.querySelector(".condition p")
 const weather = document.querySelector("#weather");
+const input = document.querySelector("#csearch");
 
 function getCityWeatherURL(input) {
 
@@ -29,10 +29,9 @@ input.onchange = async function getWeatherData(){
     const data = await response.json();
     
     console.log(data);
-    weekdayElement.innerHTML = `${data.dt}`;
-    locationElement.innerHTML = `${data.name}`;
-    tempElement.innerHTML = `${data.main.temp}`;
-    weatherCondElement.innerHTML = `${data.weather.description}`;
+    locationElement.innerHTML = `Location: ${data.name}, ${data.sys.country}`;
+    tempElement.innerHTML = `Temperature: ${data.main.temp} °C`;
+    weatherCondElement.innerHTML = `Weather condition: ${data.weather[0].main}`;
     }
 
     function search(){
