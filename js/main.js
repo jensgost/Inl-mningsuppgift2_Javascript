@@ -3,9 +3,9 @@
 // definerar variabler för att kommma åt veckodag, temperatur, väder samt plats
 const locationElement = document.querySelector(".location p");
 const weekdayElement = document.querySelector(".weekday p");
-const tempValueElement = document.querySelector(".temperature p");
-const tempDescElement = document.querySelector(".condition p");
-
+const tempElement = document.querySelector(".temperature p");
+const weatherCondElement = document.querySelector(".condition p")
+const weather = document.querySelector("#weather");
 
 function getCityWeatherURL(input) {
 
@@ -19,28 +19,33 @@ url.searchParams.set("lang", "se");
 
 return url;
 }
+const url = getCityWeatherURL(input);
+window.url = url;
 
-async getWeatherData(input) {
+input.onchange = async function getWeatherData(){
+    const url = getCityWeatherURL(input);
 
-    const myKey = "f8f1da564369558f038f69a2bfa06360";
-
-   // make request to url
-    const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${input}&appid=${myKey}`
-    );
-
+    const response = await fetch(url);
     const data = await response.json();
+    
     console.log(data);
-    return data;
+    weekdayElement.innerHTML = `${data.dt}`;
+    locationElement.innerHTML = `${data.name}`;
+    tempElement.innerHTML = `${data.main.temp}`;
+    weatherCondElement.innerHTML = `${data.weather.description}`;
     }
 
-function displayWeather(data){
-    weekdayElement.innerHTML = 
-}
-
-// tar in value från search bar
-/*  
-let searchBar = document.querySelector("#csearch");
-searchBar.onchange = function(e){
-    alert(searchBar.value);
-}*/
+    function search(){
+        this.getWeatherData(document.querySelector("#csearch").value);
+        document.querySelector("#csubmit").addEventListener("click", function() {
+            weather.search();
+        });
+        document.querySelector(".form-check-input1").onchange = function showWeather (){
+            if (form-check-input1.checked === true) {
+                weather.style.display = "block";
+            } else {
+                weather.style.display = "none";
+            }
+        };
+    
+    }
