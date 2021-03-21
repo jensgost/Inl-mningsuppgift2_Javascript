@@ -1,4 +1,4 @@
-"strict mode";
+"use strict";
 
 // definerar variabler för att kommma åt våra tre olika attraktioner + adresser
 const attractionName1 = document.querySelector(".attractionName1");
