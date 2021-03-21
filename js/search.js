@@ -1,9 +1,9 @@
 "use strict";
 
-input.addEventListener("keyup", cityName);
+button.addEventListener("click", cityName);
 
 function cityName(e) {
-    city.textContent = e.target.value;
+  city.textContent = e.target.value;
 }
     
 {

@@ -7,6 +7,7 @@ const tempElement = document.querySelector(".temperature");
 const weatherCondElement = document.querySelector(".condition")
 const weather = document.querySelector("#weather");
 const input = document.querySelector("#csearch");
+const button = document.querySelector("#csubmit");
 const city = document.querySelector("#city");
 const attractionName1 = document.querySelector(".attractionName1");
 const attractionName2 = document.querySelector(".attractionName2");

@@ -41,6 +41,10 @@ body {
   flex-shrink: 0; /* för footer */
 }
 
-#city {
+#city,
+#weather,
+#attraction1,
+#attraction2,
+#attraction3 {
   display: none;
 }
