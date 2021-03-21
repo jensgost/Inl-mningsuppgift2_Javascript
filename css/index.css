@@ -40,3 +40,7 @@ body {
   width: 100%;
   flex-shrink: 0; /* för footer */
 }
+
+#city {
+  display: none;
+}
