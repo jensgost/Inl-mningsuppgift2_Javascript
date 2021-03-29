@@ -19,6 +19,9 @@ const attraction3 = document.querySelector("#attraction3");
 let input = document.querySelector("#csearch");
 const button = document.querySelector("#csubmit");
 
+
+// vår funktion skapar en URL. Den tar in värdet från input som kommer från användarens sökning. vi returnerar variabeln url som sedan används av efterföljande funktioner som använder promise genom async/await.
+
 function getCityWeather(input) {
 
 const url = new URL("https://api.openweathermap.org/data/2.5/weather");
@@ -82,11 +85,14 @@ async function getWeatherData(){
     attractionData.response.groups[0].items[2].venue.location.address;
     }
 
+    // sökknappen, vid klick på knappen kallar vi på funktionerna getTopAttractions och getWeaththerData
     button.addEventListener("click", () => {
       getTopAttractions(input.value);
       getWeatherData(input.value);
     });
-      
+    
+
+    // Här kollar vi om användaren har klickat i rutan för att visa väderinfo/topattraktioner eller inte, och beroende på vad användaren har valt väljer vi att antingen gömma eller visa infon
     {
     document.getElementById("check1").onchange = function showWeather (){
       if (check1.checked === true) {
