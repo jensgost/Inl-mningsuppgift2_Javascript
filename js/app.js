@@ -6,8 +6,6 @@ const locationElement = document.querySelector(".location");
 const tempElement = document.querySelector(".temperature");
 const weatherCondElement = document.querySelector(".condition")
 const weather = document.querySelector("#weather");
-const input = document.querySelector("#csearch");
-const button = document.querySelector("#csubmit");
 const city = document.querySelector("#city");
 const attractionName1 = document.querySelector(".attractionName1");
 const attractionName2 = document.querySelector(".attractionName2");
@@ -18,6 +16,8 @@ const address3 = document.querySelector(".address3");
 const attraction1 = document.querySelector("#attraction1");
 const attraction2 = document.querySelector("#attraction2");
 const attraction3 = document.querySelector("#attraction3");
+let input = document.querySelector("#csearch");
+const button = document.querySelector("#csubmit");
 
 function getCityWeather(input) {
 
@@ -31,8 +31,6 @@ url.searchParams.set("lang", "se");
 
 return url;
 }
-const url = getCityWeather(input);
-window.url = url;
 
 function getTopAttractions(input) {
     const topAttraction = new URL("https://api.foursquare.com/v2/venues/explore");
@@ -51,13 +49,11 @@ function getTopAttractions(input) {
   
     return topAttraction;
   }
-  const topAttraction = getTopAttractions(input);
-  window.topAttraction = topAttraction;
 
 
 
 
-input.onchange = async function getWeatherData(){
+async function getWeatherData(){
     const url = getCityWeather(input);
     const topAttraction = getTopAttractions(input);
 
@@ -84,4 +80,34 @@ input.onchange = async function getWeatherData(){
     attractionData.response.groups[0].items[1].venue.location.address;
   address3.innerHTML =
     attractionData.response.groups[0].items[2].venue.location.address;
+    }
+
+    button.addEventListener("click", () => {
+      getTopAttractions(input.value);
+      getWeatherData(input.value);
+    });
+      
+    {
+    document.getElementById("check1").onchange = function showWeather (){
+      if (check1.checked === true) {
+          weather.style.display = "block";
+      } else {
+          weather.style.display = "none";
+      }
+    };
+    }
+    
+    {
+    document.getElementById("check2").onchange = function showAttractions () {
+      if (check2.checked === true) {
+          attraction1.style.display = "block";
+          attraction2.style.display = "block";
+          attraction3.style.display = "block";
+      } else {
+          attraction1.style.display = "none";
+          attraction2.style.display = "none";
+          attraction3.style.display = "none";
+      }
+    };
+    
     }

@@ -1,10 +1,13 @@
-"use strict";
-
-button.addEventListener("click", cityName);
+/* button.addEventListener("click", cityName);
 
 function cityName(e) {
   city.textContent = e.target.value;
-}
+}*/
+
+/*button.addEventListener("click", () => {
+    const input = input.value;
+    alert(input);
+});
     
 {
 document.getElementById("check1").onchange = function showWeather (){
@@ -29,4 +32,4 @@ document.getElementById("check2").onchange = function showAttractions () {
     }
 };
 
-}
+}*/
